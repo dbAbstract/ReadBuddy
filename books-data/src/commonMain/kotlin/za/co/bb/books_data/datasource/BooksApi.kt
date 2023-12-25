@@ -5,14 +5,17 @@ import io.ktor.client.call.body
 import io.ktor.client.engine.cio.CIO
 import io.ktor.client.request.get
 import io.ktor.http.set
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.IO
+import kotlinx.coroutines.withContext
 import za.co.bb.books_data.model.BookRemoteEntity
 import za.co.bb.core_auth.network.AuthHeaders
 
 internal class BooksApi {
     private val client = HttpClient(CIO)
 
-    internal suspend fun getRandomBook(): BookRemoteEntity {
-        return client.get {
+    internal suspend fun getRandomBook(): BookRemoteEntity = withContext(Dispatchers.IO) {
+        client.get {
             AuthHeaders.authHeaders.forEach {
                 headers[it.key] = it.value
             }

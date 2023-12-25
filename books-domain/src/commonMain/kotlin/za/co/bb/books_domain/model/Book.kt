@@ -7,7 +7,7 @@ data class Book(
     val review: Review,
     val pages: Int,
     val genres: Set<String>,
-    val rate: Double,
+    val rating: Double,
     val plot: String,
     val url: String
 )
