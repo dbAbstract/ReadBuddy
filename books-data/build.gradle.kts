@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 kotlin {
@@ -27,6 +28,9 @@ kotlin {
         commonMain.dependencies {
             //put your multiplatform dependencies here
             implementation(projects.booksDomain)
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.cio)
+            implementation(libs.kotlinx.serialization)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
