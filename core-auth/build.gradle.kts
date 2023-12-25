@@ -26,6 +26,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             //put your multiplatform dependencies here
+            implementation(projects.booksData)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
