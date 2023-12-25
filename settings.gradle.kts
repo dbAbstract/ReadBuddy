@@ -18,3 +18,4 @@ rootProject.name = "ReadBuddy"
 include(":androidApp")
 include(":shared")
 include(":books-domain")
+include(":books-data")
