@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 rootProject.name = "ReadBuddy"
 include(":androidApp")
 include(":shared")
+include(":books-domain")
