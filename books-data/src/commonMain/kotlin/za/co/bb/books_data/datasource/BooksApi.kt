@@ -11,7 +11,6 @@ internal class BooksApi {
 
     internal suspend fun getRandomBook(): BookRemoteEntity {
         return client.get {
-
         }.body<BookRemoteEntity>()
     }
 
