@@ -28,6 +28,8 @@ kotlin {
         commonMain.dependencies {
             //put your multiplatform dependencies here
             implementation(projects.booksDomain)
+            implementation(projects.coreAuth)
+            
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.cio)
             implementation(libs.kotlinx.serialization)
