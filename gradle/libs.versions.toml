@@ -36,6 +36,7 @@ appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "a
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 sql-delight-ios = { module = "app.cash.sqldelight:native-driver", version.ref = "sql-delight" }
 sql-delight-android = { module = "app.cash.sqldelight:android-driver", version.ref = "sql-delight" }
+sql-delight-runtime = { module = "com.squareup.sqldelight:runtime", version.ref = "sql-delight" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

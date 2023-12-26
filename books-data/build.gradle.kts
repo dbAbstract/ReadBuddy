@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.sql.delight)
 }
 
 kotlin {
@@ -33,7 +34,8 @@ kotlin {
             //put your multiplatform dependencies here
             implementation(projects.booksDomain)
             implementation(projects.coreAuth)
-            
+
+            implementation(libs.sql.delight.runtime)
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.cio)
             implementation(libs.ktor.client.content.negotiation)
@@ -56,5 +58,13 @@ android {
     compileSdk = 34
     defaultConfig {
         minSdk = 24
+    }
+}
+
+sqldelight {
+    databases {
+        create("BooksDatabase") {
+            packageName.set("")
+        }
     }
 }
