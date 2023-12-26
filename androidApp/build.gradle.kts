@@ -4,10 +4,10 @@ plugins {
 }
 
 android {
-    namespace = "za.co.bb.readbuddy.android"
+    namespace = "com.arcanium.readbuddy.android"
     compileSdk = 34
     defaultConfig {
-        applicationId = "za.co.bb.readbuddy.android"
+        applicationId = "com.arcanium.readbuddy.android"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

@@ -37,7 +37,7 @@ kotlin {
 }
 
 android {
-    namespace = "za.co.bb.readbuddy"
+    namespace = "com.arcanium.readbuddy"
     compileSdk = 34
     defaultConfig {
         minSdk = 24

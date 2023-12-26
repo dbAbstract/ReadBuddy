@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "za.co.bb.android_books_home"
+    namespace = "com.arcanium.android_books_home"
     compileSdk = 34
 
     defaultConfig {

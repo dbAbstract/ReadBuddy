@@ -34,7 +34,7 @@ kotlin {
 }
 
 android {
-    namespace = "za.co.bb.books_domain"
+    namespace = "com.arcanium.books_domain"
     compileSdk = 34
     defaultConfig {
         minSdk = 24

@@ -34,7 +34,7 @@ kotlin {
 }
 
 android {
-    namespace = "za.co.bb.core_auth"
+    namespace = "com.arcanium.core_auth"
     compileSdk = 34
     defaultConfig {
         minSdk = 24
