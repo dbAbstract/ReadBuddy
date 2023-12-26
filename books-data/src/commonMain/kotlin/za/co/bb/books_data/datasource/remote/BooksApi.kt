@@ -1,8 +1,7 @@
-package za.co.bb.books_data.datasource
+package za.co.bb.books_data.datasource.remote
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
-import io.ktor.client.engine.cio.CIO
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.request.get
 import io.ktor.http.path
