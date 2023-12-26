@@ -25,6 +25,10 @@ kotlin {
     }
 
     sourceSets {
+        iosMain.dependencies {
+            implementation(libs.sql.delight.ios)
+        }
+
         commonMain.dependencies {
             //put your multiplatform dependencies here
             implementation(projects.booksDomain)
@@ -36,6 +40,11 @@ kotlin {
             implementation(libs.ktor.serialization.kotlinx.json)
             implementation(libs.kotlinx.serialization)
         }
+
+        androidMain.dependencies {
+            implementation(libs.sql.delight.android)
+        }
+
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
