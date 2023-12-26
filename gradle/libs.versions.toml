@@ -40,7 +40,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 sql-delight-ios = { module = "app.cash.sqldelight:native-driver", version.ref = "sql-delight" }
 sql-delight-android = { module = "app.cash.sqldelight:android-driver", version.ref = "sql-delight" }
 sql-delight-coroutines = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sql-delight" }
-russhwolf-settings = { module = "com.russhwolf:multiplatform-settings", version.ref = "russhwolf-settings" }
+russhwolf-settings = { module = "com.russhwolf:multiplatform-settings-no-arg", version.ref = "russhwolf-settings" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
