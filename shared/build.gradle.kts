@@ -26,9 +26,7 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             //put your multiplatform dependencies here
-            implementation(projects.booksDomain)
-            implementation(projects.booksData)
-            implementation(projects.coreAuth)
+            implementation(libs.kotlinx.localdatetime)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

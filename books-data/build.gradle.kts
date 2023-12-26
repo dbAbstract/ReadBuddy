@@ -34,6 +34,7 @@ kotlin {
             //put your multiplatform dependencies here
             implementation(projects.booksDomain)
             implementation(projects.coreAuth)
+            implementation(projects.shared)
 
             implementation(libs.sql.delight.coroutines)
             implementation(libs.kotlinx.localdatetime)

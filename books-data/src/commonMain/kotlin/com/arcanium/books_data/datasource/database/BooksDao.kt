@@ -16,7 +16,7 @@ internal class BooksDao(
         bookDatabase.bookQueries.getAllBookEntities().executeAsList()
     }
 
-    suspend fun insertBooks(bookList: Collection<Book>) = withContext(Dispatchers.IO) {
+    suspend fun insertBooks(bookList: List<Book>) = withContext(Dispatchers.IO) {
         bookDatabase.transaction {
             bookList.forEach { book ->
                 bookDatabase.bookQueries.insertBookEntity(
