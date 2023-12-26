@@ -12,7 +12,7 @@ import kotlinx.coroutines.IO
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
-import za.co.bb.books_data.datasource.remote.model.BookRemoteEntity
+import za.co.bb.books_data.model.BookRemoteEntity
 import za.co.bb.core_auth.network.AuthHeaders
 
 internal class BooksApi {

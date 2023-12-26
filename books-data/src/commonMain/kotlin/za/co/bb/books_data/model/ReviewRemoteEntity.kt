@@ -1,4 +1,4 @@
-package za.co.bb.books_data.datasource.remote.model
+package za.co.bb.books_data.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
