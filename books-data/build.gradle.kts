@@ -42,6 +42,7 @@ kotlin {
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.serialization.kotlinx.json)
             implementation(libs.kotlinx.serialization)
+            implementation(libs.russhwolf.settings)
         }
 
         androidMain.dependencies {

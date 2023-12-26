@@ -39,7 +39,6 @@ android {
 }
 
 dependencies {
-    implementation(projects.shared)
     implementation(projects.booksData)
     implementation(projects.booksDomain)
 
