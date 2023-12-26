@@ -15,5 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <provider
+            android:authorities="com.arcanium.books_data"
+            android:name="com.arcanium.books_data.datasource.BooksDataContentProvider"
+            android:exported="false" />
     </application>
 </manifest> 

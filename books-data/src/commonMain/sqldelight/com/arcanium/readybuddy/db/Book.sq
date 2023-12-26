@@ -1,0 +1,26 @@
+CREATE TABLE BookEntity (
+  bookId TEXT NOT NULL PRIMARY KEY,
+  title TEXT NOT NULL,
+  pages INTEGER NOT NULL,
+  rating REAL NOT NULL,
+  plot TEXT NOT NULL,
+  cover TEXT NOT NULL,
+  url TEXT NOT NULL,
+  author TEXT NOT NULL,
+  review TEXT NOT NULL,
+  genres TEXT NOT NULL
+);
+
+-- BookEntity queries
+insertBookEntity:
+INSERT INTO BookEntity (bookId, title, pages, rating, plot, cover, url, author, review, genres)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+getBookEntity:
+SELECT * FROM BookEntity WHERE bookId = ?;
+
+getAllBookEntities:
+SELECT * FROM BookEntity;
+
+deleteBookEntity:
+DELETE FROM BookEntity WHERE bookId = ?;

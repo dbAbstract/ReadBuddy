@@ -35,7 +35,7 @@ kotlin {
             implementation(projects.booksDomain)
             implementation(projects.coreAuth)
 
-            implementation(libs.sql.delight.runtime)
+            implementation(libs.sql.delight.coroutines)
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.cio)
             implementation(libs.ktor.client.content.negotiation)
@@ -64,7 +64,7 @@ android {
 sqldelight {
     databases {
         create("BooksDatabase") {
-            packageName.set("")
+            packageName.set("com.arcanium.readybuddy.db")
         }
     }
 }
