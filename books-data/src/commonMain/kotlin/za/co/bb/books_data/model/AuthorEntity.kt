@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-internal data class AuthorRemoteEntity(
+internal data class AuthorEntity(
     @SerialName("first_name")
     val firstName: String,
     @SerialName("last_name")

@@ -7,11 +7,11 @@ import za.co.bb.books_domain.model.Book
 import za.co.bb.books_domain.model.Review
 
 @Serializable
-internal data class BookRemoteEntity(
+internal data class BookEntity(
     @SerialName("author")
-    val author: AuthorRemoteEntity,
+    val author: AuthorEntity,
     @SerialName("review")
-    val review: ReviewRemoteEntity,
+    val review: ReviewEntity,
     @SerialName("book_id")
     val bookId: String,
     @SerialName("title")
@@ -30,7 +30,7 @@ internal data class BookRemoteEntity(
     val url: String
 )
 
-internal fun BookRemoteEntity.toBook(): Book = Book(
+internal fun BookEntity.toBook(): Book = Book(
     id = bookId,
     title = title,
     author = Author(firstName = author.firstName, surname = author.surname),

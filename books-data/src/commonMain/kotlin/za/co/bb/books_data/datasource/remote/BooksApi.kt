@@ -12,7 +12,7 @@ import kotlinx.coroutines.IO
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
-import za.co.bb.books_data.model.BookRemoteEntity
+import za.co.bb.books_data.model.BookEntity
 import za.co.bb.core_auth.network.AuthHeaders
 
 internal class BooksApi {
@@ -29,7 +29,7 @@ internal class BooksApi {
         }
     }
 
-    internal suspend fun getRandomBook(): BookRemoteEntity = withContext(Dispatchers.IO) {
+    internal suspend fun getRandomBook(): BookEntity = withContext(Dispatchers.IO) {
         client.get {
             AuthHeaders.authHeaders.forEach {
                 headers[it.key] = it.value
@@ -38,7 +38,7 @@ internal class BooksApi {
                 takeFrom(BASE_URL)
                 path(GET_RANDOM_BOOK)
             }
-        }.body<BookRemoteEntity>()
+        }.body<BookEntity>()
     }
 
     private companion object {

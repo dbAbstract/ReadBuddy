@@ -4,7 +4,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-internal data class ReviewRemoteEntity(
+internal data class ReviewEntity(
     @SerialName("name")
     val name: String,
     @SerialName("body")
