@@ -36,6 +36,7 @@ kotlin {
             implementation(projects.coreAuth)
 
             implementation(libs.sql.delight.coroutines)
+            implementation(libs.kotlinx.localdatetime)
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.cio)
             implementation(libs.ktor.client.content.negotiation)
