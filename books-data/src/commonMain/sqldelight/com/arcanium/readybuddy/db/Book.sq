@@ -7,14 +7,13 @@ CREATE TABLE BookEntity (
   cover TEXT NOT NULL,
   url TEXT NOT NULL,
   author TEXT NOT NULL,
-  review TEXT NOT NULL,
-  genres TEXT NOT NULL
+  review TEXT NOT NULL
 );
 
 -- BookEntity queries
 insertBookEntity:
-INSERT INTO BookEntity (bookId, title, pages, rating, plot, cover, url, author, review, genres)
-VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+INSERT INTO BookEntity (bookId, title, pages, rating, plot, cover, url, author, review)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);
 
 getBookEntity:
 SELECT * FROM BookEntity WHERE bookId = ?;
