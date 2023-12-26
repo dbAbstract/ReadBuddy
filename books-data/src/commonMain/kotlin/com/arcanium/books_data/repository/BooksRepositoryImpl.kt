@@ -2,7 +2,7 @@ package com.arcanium.books_data.repository
 
 import com.arcanium.books_data.datasource.database.BooksDao
 import com.arcanium.books_data.datasource.remote.BooksApi
-import com.arcanium.books_data.model.toBook
+import com.arcanium.books_data.datasource.remote.model.toBook
 import com.arcanium.books_domain.model.Book
 import com.arcanium.books_domain.repository.BooksRepository
 import com.russhwolf.settings.Settings

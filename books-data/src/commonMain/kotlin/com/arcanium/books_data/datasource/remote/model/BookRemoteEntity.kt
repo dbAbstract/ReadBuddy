@@ -1,4 +1,4 @@
-package com.arcanium.books_data.model
+package com.arcanium.books_data.datasource.remote.model
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -7,11 +7,11 @@ import com.arcanium.books_domain.model.Book
 import com.arcanium.books_domain.model.Review
 
 @Serializable
-internal data class BookEntity(
+internal data class BookRemoteEntity(
     @SerialName("author")
-    val author: AuthorEntity,
+    val author: AuthorRemoteEntity,
     @SerialName("review")
-    val review: ReviewEntity,
+    val review: ReviewRemoteEntity,
     @SerialName("book_id")
     val bookId: String,
     @SerialName("title")
@@ -30,7 +30,7 @@ internal data class BookEntity(
     val url: String
 )
 
-internal fun BookEntity.toBook(): Book = Book(
+internal fun BookRemoteEntity.toBook(): Book = Book(
     id = bookId,
     title = title,
     author = Author(firstName = author.firstName, surname = author.surname),
