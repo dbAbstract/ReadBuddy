@@ -39,5 +39,6 @@ internal fun BookEntity.toBook(): Book = Book(
     genres = genres.toSet(),
     rating = rating,
     plot = plot,
-    url = url
+    url = url,
+    imageUrl = cover
 )

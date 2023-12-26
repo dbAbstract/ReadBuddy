@@ -5,6 +5,7 @@ data class Book(
     val title: String,
     val author: Author,
     val review: Review,
+    val imageUrl: String,
     val pages: Int,
     val genres: Set<String>,
     val rating: Double,
