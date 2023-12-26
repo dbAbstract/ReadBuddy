@@ -1,4 +1,4 @@
-package com.arcanium.books_data.datasource.database
+package com.arcanium.books_data.datasource.database.books
 
 import app.cash.sqldelight.db.SqlDriver
 

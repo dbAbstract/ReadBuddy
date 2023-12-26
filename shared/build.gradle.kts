@@ -27,6 +27,7 @@ kotlin {
         commonMain.dependencies {
             //put your multiplatform dependencies here
             implementation(libs.kotlinx.localdatetime)
+            implementation(libs.russhwolf.settings)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

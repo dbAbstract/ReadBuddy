@@ -14,10 +14,12 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import com.arcanium.books_data.datasource.remote.model.BookRemoteEntity
 import com.arcanium.books_domain.model.Genre
-import com.arcanium.core_auth.network.AuthHeaders
+import com.arcanium.readbuddy.auth.AuthNetworkRepository
 import io.ktor.client.request.HttpRequestBuilder
 
-internal class BooksApi {
+internal class BooksApi(
+    private val authNetworkRepository: AuthNetworkRepository
+) {
 
     @OptIn(ExperimentalSerializationApi::class)
     private val client = HttpClient {
@@ -54,16 +56,16 @@ internal class BooksApi {
         }.body<List<BookRemoteEntity>>()
     }
 
+    private fun HttpRequestBuilder.attachAuthHeaders() {
+        authNetworkRepository.authHeaders.forEach {
+            headers[it.key] = it.value
+        }
+    }
+
     private companion object {
         const val BASE_URL = "https://books-api7.p.rapidapi.com"
         const val GET_RANDOM_BOOK = "/books/get/random"
         const val GET_BOOK_BY_GENRE = "books/find/genres"
         const val PARAMETER_GENRES = "genres"
-    }
-}
-
-private fun HttpRequestBuilder.attachAuthHeaders() {
-    AuthHeaders.authHeaders.forEach {
-        headers[it.key] = it.value
     }
 }

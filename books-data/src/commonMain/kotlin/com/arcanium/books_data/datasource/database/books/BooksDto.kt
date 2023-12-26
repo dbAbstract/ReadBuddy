@@ -1,4 +1,4 @@
-package com.arcanium.books_data.datasource.database
+package com.arcanium.books_data.datasource.database.books
 
 import com.arcanium.books_domain.model.Author
 import com.arcanium.books_domain.model.Book

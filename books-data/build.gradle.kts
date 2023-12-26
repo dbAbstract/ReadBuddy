@@ -33,7 +33,7 @@ kotlin {
         commonMain.dependencies {
             //put your multiplatform dependencies here
             implementation(projects.booksDomain)
-            implementation(projects.coreAuth)
+//            implementation(projects.coreAuth)
             implementation(projects.shared)
 
             implementation(libs.sql.delight.coroutines)
@@ -67,7 +67,7 @@ android {
 sqldelight {
     databases {
         create("BooksDatabase") {
-            packageName.set("com.arcanium.readybuddy.db")
+            packageName.set("com.arcanium.readybuddy.db.books")
         }
     }
 }
