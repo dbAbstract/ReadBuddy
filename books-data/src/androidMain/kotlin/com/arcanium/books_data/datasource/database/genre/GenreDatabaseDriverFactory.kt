@@ -1,16 +1,15 @@
-package com.arcanium.books_data.datasource.database.books
+package com.arcanium.books_data.datasource.database.genre
 
 import app.cash.sqldelight.db.SqlDriver
 import app.cash.sqldelight.driver.android.AndroidSqliteDriver
 import com.arcanium.books_data.datasource.BooksDataContentProvider
-import com.arcanium.readybuddy.db.BooksDatabase
 
-actual class BookDatabaseDriverFactory {
+actual class GenreDatabaseDriverFactory {
     actual fun createDriver(): SqlDriver {
         return AndroidSqliteDriver(
-            schema = BooksDatabase.Schema,
+            schema = TODO(),
             context = BooksDataContentProvider.applicationContext,
-            name = "BooksDatabase.db"
+            name = "GenreDatabase.db"
         )
     }
 }

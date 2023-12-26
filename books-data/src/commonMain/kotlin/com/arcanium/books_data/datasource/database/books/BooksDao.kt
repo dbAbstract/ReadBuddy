@@ -2,7 +2,7 @@ package com.arcanium.books_data.datasource.database.books
 
 import com.arcanium.books_domain.model.Book
 import com.arcanium.readybuddy.db.BookEntity
-import com.arcanium.readybuddy.db.books.BooksDatabase
+import com.arcanium.readybuddy.db.BooksDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.IO
 import kotlinx.coroutines.withContext
