@@ -1,0 +1,7 @@
+CREATE TABLE Genre (
+  genreName TEXT PRIMARY KEY
+);
+
+insertGenre:
+INSERT INTO Genre (genreName)
+SELECT ? WHERE NOT EXISTS (SELECT 1 FROM Genre WHERE genreName = ?);

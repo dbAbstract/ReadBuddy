@@ -21,5 +21,14 @@ SELECT * FROM BookEntity WHERE bookId = ?;
 getAllBookEntities:
 SELECT * FROM BookEntity;
 
+getBooksByGenre:
+SELECT BookEntity.*
+FROM BookEntity
+JOIN BookGenreLink ON BookEntity.bookId = BookGenreLink.bookId
+WHERE BookGenreLink.genreName = ?;
+
+deleteBook:
+DELETE FROM BookEntity WHERE bookId = ?;
+
 deleteBookEntity:
 DELETE FROM BookEntity WHERE bookId = ?;
