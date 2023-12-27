@@ -1,14 +1,14 @@
-CREATE TABLE BookGenreLink (
+CREATE TABLE BookGenreLinkEntity (
   bookId TEXT NOT NULL,
   genreName TEXT NOT NULL,
   FOREIGN KEY(bookId) REFERENCES BookEntity(bookId),
-  FOREIGN KEY(genreName) REFERENCES Genre(genreName),
+  FOREIGN KEY(genreName) REFERENCES GenreEntity(genreName),
   PRIMARY KEY(bookId, genreName)
 );
 
 insertBookGenreLink:
-INSERT INTO BookGenreLink (bookId, genreName)
+INSERT INTO BookGenreLinkEntity (bookId, genreName)
 VALUES (?, ?);
 
 deleteBookGenreLink:
-DELETE FROM BookGenreLink WHERE bookId = ?;
+DELETE FROM BookGenreLinkEntity WHERE bookId = ?;

@@ -1,6 +1,6 @@
-CREATE TABLE Genre (
+CREATE TABLE GenreEntity (
   genreName TEXT PRIMARY KEY
 );
 
 getGenres:
-SELECT * FROM Genre;
+SELECT * FROM GenreEntity;
