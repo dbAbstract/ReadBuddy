@@ -66,7 +66,7 @@ android {
 sqldelight {
     databases {
         create("BooksDatabase") {
-            packageName.set("com.arcanium.readybuddy.db")
+            packageName.set("com.arcanium.readbuddy.db")
         }
     }
 }

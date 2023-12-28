@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.sql.delight)
 }
 
 kotlin {
@@ -41,5 +42,13 @@ android {
     compileSdk = 34
     defaultConfig {
         minSdk = 24
+    }
+}
+
+sqldelight {
+    databases {
+        create("UsersDatabase") {
+            packageName.set("com.arcanium.readybuddy.db")
+        }
     }
 }
