@@ -1,5 +1,6 @@
 package com.arcanium.books_data.datasource.remote
 
+import co.touchlab.kermit.Logger
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
@@ -20,6 +21,7 @@ import io.ktor.client.request.HttpRequestBuilder
 internal class BooksApi(
     private val authNetworkRepository: AuthNetworkRepository
 ) {
+    private val log = Logger.withTag(tag = "BookApi")
 
     @OptIn(ExperimentalSerializationApi::class)
     private val client = HttpClient {
@@ -53,7 +55,9 @@ internal class BooksApi(
                     parameters.set(name = PARAMETER_GENRES, value = it.name)
                 }
             }
-        }.body<List<BookRemoteEntity>>()
+        }.body<List<BookRemoteEntity>>().also {
+            log.i { "Fetched ${it.size} books from remote!" }
+        }
     }
 
     private fun HttpRequestBuilder.attachAuthHeaders() {
@@ -66,6 +70,6 @@ internal class BooksApi(
         const val BASE_URL = "https://books-api7.p.rapidapi.com"
         const val GET_RANDOM_BOOK = "/books/get/random"
         const val GET_BOOK_BY_GENRE = "books/find/genres"
-        const val PARAMETER_GENRES = "genres"
+        const val PARAMETER_GENRES = "genres[]"
     }
 }

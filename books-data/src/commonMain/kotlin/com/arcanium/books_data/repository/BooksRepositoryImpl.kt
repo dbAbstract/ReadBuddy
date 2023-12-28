@@ -1,5 +1,6 @@
 package com.arcanium.books_data.repository
 
+import co.touchlab.kermit.Logger
 import com.arcanium.books_data.datasource.database.BooksDao
 import com.arcanium.books_data.datasource.remote.BooksApi
 import com.arcanium.books_data.datasource.remote.model.toBook
@@ -24,6 +25,8 @@ internal class BooksRepositoryImpl(
     private val settings: Settings
 ) : BooksRepository {
 
+    private val log = Logger.withTag(tag = "BookRepo")
+
     @Throws(Exception::class)
     override suspend fun getRandomBook(): Book {
         return booksApi.getRandomBook().toBook()
@@ -32,9 +35,11 @@ internal class BooksRepositoryImpl(
     @Throws(Exception::class)
     override suspend fun getBookByGenres(genreList: List<Genre>): Map<Genre, List<Book>> {
         if (lastRefreshed() == null) {
+            log.i { "Fetching remote Books" }
             val remoteBookList = booksApi.getBooksByGenres(genreList = genreList)
 
             remoteBookList.forEach { bookEntity ->
+                log.i { "Caching book ${bookEntity.title}" }
                 val genresForBook = bookEntity.genres.map { genreName ->
                     Genre(genreName)
                 }
@@ -48,10 +53,11 @@ internal class BooksRepositoryImpl(
                 booksDao.insertBook(book = book)
             }
             settings.set(key = LAST_REFRESHED_KEY, value = now.epochSeconds)
-        }
+        } else log.i { "Fetching books from cache." }
 
         val bookGenreMap = mutableMapOf<Genre, List<Book>>()
         genreList.forEach { genre ->
+            log.i { "Retrieving book for genre=$genre" }
             bookGenreMap[genre] = booksDao.getBooksByGenre(genre)
         }
 

@@ -16,6 +16,7 @@ appcompat = "1.6.1"
 material = "1.11.0"
 sql-delight = "2.0.1"
 russhwolf-settings = "1.1.1"
+kermit = "2.0.2"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -41,6 +42,7 @@ sql-delight-ios = { module = "app.cash.sqldelight:native-driver", version.ref = 
 sql-delight-android = { module = "app.cash.sqldelight:android-driver", version.ref = "sql-delight" }
 sql-delight-coroutines = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sql-delight" }
 russhwolf-settings = { module = "com.russhwolf:multiplatform-settings-no-arg", version.ref = "russhwolf-settings" }
+kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

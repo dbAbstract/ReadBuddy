@@ -28,6 +28,7 @@ kotlin {
             //put your multiplatform dependencies here
             implementation(libs.kotlinx.localdatetime)
             implementation(libs.russhwolf.settings)
+            api(libs.kermit)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
