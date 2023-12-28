@@ -7,6 +7,7 @@ compose = "1.5.4"
 ktor = "2.3.7"
 compose-compiler = "1.5.6"
 compose-material3 = "1.1.2"
+compose-navigation = "2.7.2"
 androidx-activityCompose = "1.8.2"
 core-ktx = "1.12.0"
 junit = "4.13.2"
@@ -43,6 +44,7 @@ sql-delight-android = { module = "app.cash.sqldelight:android-driver", version.r
 sql-delight-coroutines = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sql-delight" }
 russhwolf-settings = { module = "com.russhwolf:multiplatform-settings-no-arg", version.ref = "russhwolf-settings" }
 kermit = { module = "co.touchlab:kermit", version.ref = "kermit" }
+compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "compose-navigation" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
