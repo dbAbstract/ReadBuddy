@@ -8,5 +8,5 @@ interface BooksRepository {
     suspend fun getRandomBook(): Book
 
     @Throws(Exception::class)
-    suspend fun getBookByGenres(genreList: List<Genre>): List<Book>
+    suspend fun getBookByGenres(genreList: List<Genre>): Map<Genre, List<Book>>
 }

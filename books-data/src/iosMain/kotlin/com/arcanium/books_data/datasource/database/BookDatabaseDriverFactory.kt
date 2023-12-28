@@ -1,8 +1,8 @@
-package com.arcanium.books_data.datasource.database.books
+package com.arcanium.books_data.datasource.database
 
 import app.cash.sqldelight.db.SqlDriver
 import app.cash.sqldelight.driver.native.NativeSqliteDriver
-import com.arcanium.readybuddy.db.books.BooksDatabase
+import com.arcanium.readybuddy.db.BooksDatabase
 
 actual class BookDatabaseDriverFactory {
     actual fun createDriver(): SqlDriver {

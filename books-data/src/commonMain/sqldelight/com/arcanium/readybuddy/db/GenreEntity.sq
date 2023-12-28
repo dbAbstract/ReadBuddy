@@ -4,3 +4,7 @@ CREATE TABLE GenreEntity (
 
 getGenres:
 SELECT * FROM GenreEntity;
+
+insertGenreEntity:
+INSERT INTO GenreEntity
+VALUES (?);

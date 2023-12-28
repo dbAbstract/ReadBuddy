@@ -36,7 +36,6 @@ internal fun BookRemoteEntity.toBook(): Book = Book(
     author = Author(firstName = author.firstName, surname = author.surname),
     review = Review(name = review.name, body = review.body),
     pages = pages,
-    genres = genres.toSet(),
     rating = rating,
     plot = plot,
     url = url,
