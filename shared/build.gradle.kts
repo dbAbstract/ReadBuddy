@@ -30,6 +30,13 @@ kotlin {
             implementation(libs.kotlinx.localdatetime)
             implementation(libs.russhwolf.settings)
             api(libs.kermit)
+            implementation(libs.sql.delight.coroutines)
+        }
+        iosMain.dependencies {
+            implementation(libs.sql.delight.ios)
+        }
+        androidMain.dependencies {
+            implementation(libs.sql.delight.android)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -47,7 +54,7 @@ android {
 
 sqldelight {
     databases {
-        create("UsersDatabase") {
+        create("AuthDatabase") {
             packageName.set("com.arcanium.readybuddy.db")
         }
     }

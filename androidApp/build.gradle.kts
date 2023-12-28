@@ -41,6 +41,7 @@ android {
 dependencies {
     implementation(projects.booksData)
     implementation(projects.booksDomain)
+    implementation(projects.shared)
 
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling.preview)

@@ -15,7 +15,7 @@ import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
 import com.arcanium.books_data.datasource.remote.model.BookRemoteEntity
 import com.arcanium.books_domain.model.Genre
-import com.arcanium.readbuddy.auth.AuthNetworkRepository
+import com.arcanium.readbuddy.auth.repository.AuthNetworkRepository
 import io.ktor.client.request.HttpRequestBuilder
 
 internal class BooksApi(

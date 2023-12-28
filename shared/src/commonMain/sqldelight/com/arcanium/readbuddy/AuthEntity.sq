@@ -1,0 +1,13 @@
+CREATE TABLE AuthEntity (
+    username TEXT NOT NULL PRIMARY KEY,
+    firstName TEXT NOT NULL,
+    surname TEXT NOT NULL,
+    authContent TEXT NOT NULL
+);
+
+getUser:
+SELECT * FROM AuthEntity WHERE username = ?;
+
+insertUser:
+INSERT INTO AuthEntity (username, authContent, firstName, surname)
+VALUES (?, ?, ?, ?);
