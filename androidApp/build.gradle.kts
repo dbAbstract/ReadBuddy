@@ -42,7 +42,9 @@ dependencies {
     implementation(projects.booksData)
     implementation(projects.booksDomain)
     implementation(projects.shared)
+    implementation(projects.androidOnboarding)
 
+    implementation(libs.compose.navigation)
     implementation(libs.compose.ui)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
