@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "za.co.bb.android_login"
+    namespace = "za.co.bb.android_onboarding"
     compileSdk = 34
 
     defaultConfig {
@@ -46,6 +46,7 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
 
+    implementation(libs.androidx.lifecycle.compose)
     implementation(libs.compose.ui)
     implementation(libs.compose.foundation)
     implementation(libs.compose.material3)
