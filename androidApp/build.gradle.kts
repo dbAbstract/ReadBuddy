@@ -8,7 +8,7 @@ android {
     compileSdk = 34
     defaultConfig {
         applicationId = "com.arcanium.readbuddy.android"
-        minSdk = 24
+        minSdk = libs.versions.android.min.sdk.get().toInt()
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"

@@ -19,6 +19,7 @@ sql-delight = "2.0.1"
 russhwolf-settings = "1.1.1"
 kermit = "2.0.2"
 lifecycle-compose = "2.6.2"
+android-min-sdk = "26"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }

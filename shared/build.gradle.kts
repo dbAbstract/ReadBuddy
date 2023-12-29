@@ -53,7 +53,7 @@ android {
     namespace = "com.arcanium.readbuddy"
     compileSdk = 34
     defaultConfig {
-        minSdk = 24
+        minSdk = libs.versions.android.min.sdk.get().toInt()
     }
 }
 

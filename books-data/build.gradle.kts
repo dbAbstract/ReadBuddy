@@ -59,7 +59,7 @@ android {
     namespace = "com.arcanium.books_data"
     compileSdk = 34
     defaultConfig {
-        minSdk = 24
+        minSdk = libs.versions.android.min.sdk.get().toInt()
     }
 }
 
