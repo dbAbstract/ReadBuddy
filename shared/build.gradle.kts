@@ -38,6 +38,10 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.sql.delight.android)
             api(libs.compose.navigation)
+            implementation(libs.compose.ui.tooling)
+            implementation(libs.compose.ui)
+            implementation(libs.compose.material3)
+            implementation(libs.compose.foundation)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
