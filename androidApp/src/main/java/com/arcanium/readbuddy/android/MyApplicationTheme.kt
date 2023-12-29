@@ -10,6 +10,7 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -34,10 +35,25 @@ fun MyApplicationTheme(
         )
     }
     val typography = Typography(
+        bodySmall = TextStyle(
+            fontFamily = RobotoMonoFontFamily,
+            fontWeight = FontWeight.Normal,
+            fontSize = 12.sp
+        ),
         bodyMedium = TextStyle(
-            fontFamily = FontFamily.Default,
+            fontFamily = RobotoMonoFontFamily,
             fontWeight = FontWeight.Normal,
             fontSize = 16.sp
+        ),
+        bodyLarge = TextStyle(
+            fontFamily = RobotoMonoFontFamily,
+            fontWeight = FontWeight.Normal,
+            fontSize = 20.sp
+        ),
+        labelSmall = TextStyle(
+            fontFamily = RobotoMonoFontFamily,
+            fontWeight = FontWeight.Normal,
+            fontSize = 9.sp
         )
     )
     val shapes = Shapes(
@@ -53,3 +69,14 @@ fun MyApplicationTheme(
         content = content
     )
 }
+
+private val RobotoMonoFontFamily = FontFamily(
+    fonts = listOf(
+        Font(resId = R.font.robotomono_regular, weight = FontWeight.Normal),
+        Font(resId = R.font.robotomono_bold, weight = FontWeight.Bold),
+        Font(resId = R.font.robotomono_bolditalic, weight = FontWeight.Bold),
+        Font(resId = R.font.robotomono_extralight, weight = FontWeight.ExtraLight),
+        Font(resId = R.font.robotomono_italic, weight = FontWeight.Normal),
+        Font(resId = R.font.robotomono_semibold, weight = FontWeight.SemiBold)
+    )
+)
