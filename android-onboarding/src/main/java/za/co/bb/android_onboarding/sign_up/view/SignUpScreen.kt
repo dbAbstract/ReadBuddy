@@ -1,5 +1,6 @@
 package za.co.bb.android_onboarding.sign_up.view
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
@@ -20,8 +21,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.arcanium.readbuddy.ui.components.AppButton
 import com.arcanium.readbuddy.ui.components.AppText
 import com.arcanium.readbuddy.ui.components.AppTextField
@@ -54,6 +57,13 @@ internal fun SignUpScreen(
                     interactionSource = MutableInteractionSource()
                 )
         ) {
+            AppText(
+                text = "Welcome",
+                textStyle = MaterialTheme.typography.titleMedium
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
             AppTextField(
                 value = uiState.username,
                 onValueChanged = eventHandler::onUsernameChange,
@@ -99,9 +109,10 @@ internal fun SignUpScreen(
                     .height(60.dp)
                     .fillMaxWidth(0.7f)
                     .imePadding(),
-                onClick = eventHandler::onNextClicked
+                onClick = eventHandler::onNextClicked,
+                border = BorderStroke(width = 1.dp, color = MaterialTheme.colorScheme.primary)
             ) {
-                AppText(text = "Next")
+                AppText(text = "Next", textStyle = TextStyle(fontSize = 16.sp))
             }
         }
 

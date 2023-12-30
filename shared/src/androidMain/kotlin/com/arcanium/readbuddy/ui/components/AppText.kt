@@ -29,6 +29,7 @@ fun AppText(
         softWrap = softWrap,
         maxLines = maxLines,
         minLines = minLines,
-        onTextLayout = {}
+        onTextLayout = {},
+        style = textStyle
     )
 }

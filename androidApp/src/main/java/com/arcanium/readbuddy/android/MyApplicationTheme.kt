@@ -29,9 +29,12 @@ fun MyApplicationTheme(
         )
     } else {
         lightColorScheme(
-            primary = Color(0xFF6200EE),
+            primary = Color(0xFF242424),
             secondary = Color(0xFF03DAC5),
-            tertiary = Color(0xFF3700B3)
+            tertiary = Color(0xFF3700B3),
+            onPrimary = Color.White,
+            primaryContainer = Color(0xFFFFFFF4),
+            onPrimaryContainer = Color.Black
         )
     }
     val typography = Typography(
@@ -54,6 +57,21 @@ fun MyApplicationTheme(
             fontFamily = RobotoMonoFontFamily,
             fontWeight = FontWeight.Normal,
             fontSize = 9.sp
+        ),
+        titleSmall = TextStyle(
+            fontSize = 24.sp,
+            fontFamily = RobotoMonoFontFamily,
+            fontWeight = FontWeight.SemiBold
+        ),
+        titleMedium = TextStyle(
+            fontSize = 28.sp,
+            fontFamily = RobotoMonoFontFamily,
+            fontWeight = FontWeight.SemiBold
+        ),
+        titleLarge = TextStyle(
+            fontSize = 36.sp,
+            fontFamily = RobotoMonoFontFamily,
+            fontWeight = FontWeight.Bold
         )
     )
     val shapes = Shapes(
