@@ -9,4 +9,6 @@ internal interface SignUpScreenEventHandler {
     fun onApiKeyChanged(value: String)
 
     fun onApiHostChanged(value: String)
+
+    fun onNextClicked()
 }
