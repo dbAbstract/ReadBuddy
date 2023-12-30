@@ -55,6 +55,13 @@ android {
     defaultConfig {
         minSdk = libs.versions.android.min.sdk.get().toInt()
     }
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
+    }
 }
 
 sqldelight {

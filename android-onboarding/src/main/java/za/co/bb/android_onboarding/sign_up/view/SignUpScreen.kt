@@ -1,5 +1,6 @@
 package za.co.bb.android_onboarding.sign_up.view
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -25,17 +26,25 @@ internal fun SignUpScreen(
     uiState: SignUpScreenState,
     eventHandler: SignUpScreenEventHandler
 ) {
-    Box(modifier = Modifier.fillMaxSize()) {
+    Box(modifier = Modifier
+        .fillMaxSize()
+        .background(MaterialTheme.colorScheme.background)
+    ) {
         Column(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.alpha(if (uiState.isLoading) 0.3f else 1f)
+            modifier = Modifier
+                .fillMaxSize()
+                .alpha(if (uiState.isLoading) 0.3f else 1f)
         ) {
             AppTextField(
                 value = uiState.username,
                 onValueChanged = eventHandler::onUsernameChange,
                 label = {
-                    AppText(text = "Username")
+                    AppText(
+                        text = "Username",
+                        textStyle = MaterialTheme.typography.labelMedium
+                    )
                 }
             )
 
@@ -45,7 +54,10 @@ internal fun SignUpScreen(
                 value = uiState.authHeaderApiHost,
                 onValueChanged = eventHandler::onApiKeyChanged,
                 label = {
-                    AppText(text = "Api Key")
+                    AppText(
+                        text = "Api Key",
+                        textStyle = MaterialTheme.typography.labelMedium
+                    )
                 }
             )
 
@@ -55,7 +67,10 @@ internal fun SignUpScreen(
                 value = uiState.authHeaderApiHost,
                 onValueChanged = eventHandler::onApiKeyChanged,
                 label = {
-                    AppText(text = "Api Key")
+                    AppText(
+                        text = "Api Host",
+                        textStyle = MaterialTheme.typography.labelMedium
+                    )
                 }
             )
         }
@@ -70,8 +85,25 @@ internal fun SignUpScreen(
 
 }
 
-@Preview
+@Preview(
+    showBackground = true,
+    showSystemUi = true
+)
 @Composable
 private fun SignUpScreenPreview() {
-    
+    SignUpScreen(
+        uiState = SignUpScreenState(
+            isLoading = false,
+            username = "Test",
+            authHeaderApiKey = "Api Key",
+            authHeaderApiHost = "Api Host"
+        ),
+        eventHandler = previewEventHandler
+    )
+}
+
+private val previewEventHandler = object : SignUpScreenEventHandler {
+    override fun onUsernameChange(username: String) = Unit
+    override fun onApiKeyChanged(value: String) = Unit
+    override fun onApiHostChanged(value: String) = Unit
 }

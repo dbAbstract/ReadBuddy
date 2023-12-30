@@ -6,6 +6,7 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 open class BaseViewModel<State, Action>(state: State) : ViewModel() {
@@ -18,6 +19,12 @@ open class BaseViewModel<State, Action>(state: State) : ViewModel() {
     protected fun emitAction(action: Action) {
         viewModelScope.launch {
             _action.send(element = action)
+        }
+    }
+
+    protected fun updateState(block: State.() -> State) {
+        _uiState.update {
+            block(it)
         }
     }
 }

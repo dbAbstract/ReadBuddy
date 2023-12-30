@@ -15,15 +15,21 @@ internal class SignUpViewModel : BaseViewModel<SignUpScreenState, SignUpScreenAc
 ) {
     val eventHandler = object : SignUpScreenEventHandler {
         override fun onUsernameChange(username: String) {
-            TODO("Not yet implemented")
+            updateState {
+                copy(username = username)
+            }
         }
 
         override fun onApiKeyChanged(value: String) {
-            TODO("Not yet implemented")
+            updateState {
+                copy(authHeaderApiKey = value)
+            }
         }
 
         override fun onApiHostChanged(value: String) {
-            TODO("Not yet implemented")
+            updateState {
+                copy(authHeaderApiHost = value)
+            }
         }
 
     }
