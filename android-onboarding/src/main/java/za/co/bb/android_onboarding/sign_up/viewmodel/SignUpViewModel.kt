@@ -33,8 +33,7 @@ internal class SignUpViewModel : BaseViewModel<SignUpScreenState, SignUpScreenAc
         }
 
         override fun onNextClicked() {
-            TODO("Not yet implemented")
+            emitAction(SignUpScreenAction.NavigateToCustomize)
         }
-
     }
 }

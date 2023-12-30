@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.arcanium.readbuddy.navigation.Screen
+import com.arcanium.readbuddy.navigation.navigate
 import za.co.bb.android_onboarding.navigation.onboardingNavGraph
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +22,7 @@ class MainActivity : ComponentActivity() {
                 navController = navController,
                 startDestination = Screen.OnboardingGraph.route
             ) {
-                onboardingNavGraph()
+                onboardingNavGraph(navigate = navController::navigate)
             }
         }
     }
