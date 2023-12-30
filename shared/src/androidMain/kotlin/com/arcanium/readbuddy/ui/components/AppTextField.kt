@@ -17,7 +17,8 @@ fun AppTextField(
     colors: TextFieldColors = OutlinedTextFieldDefaults.colors(
         focusedLabelColor = MaterialTheme.colorScheme.primary,
         focusedBorderColor = MaterialTheme.colorScheme.primary
-    )
+    ),
+    singleLine: Boolean = true
 ) {
     OutlinedTextField(
         modifier = modifier,
@@ -25,6 +26,7 @@ fun AppTextField(
         onValueChange = onValueChanged,
         colors = colors,
         label = label,
-        placeholder = placeHolder
+        placeholder = placeHolder,
+        singleLine = singleLine
     )
 }
