@@ -22,9 +22,5 @@ open class BaseViewModel<State, Action>(state: State) : ViewModel() {
         }
     }
 
-    protected fun updateState(block: State.() -> State) {
-        _uiState.update {
-            block(it)
-        }
-    }
+    protected fun updateState(block: State.() -> State) = _uiState.update(block)
 }
