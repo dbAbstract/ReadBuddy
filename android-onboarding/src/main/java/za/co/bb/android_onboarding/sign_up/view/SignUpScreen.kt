@@ -58,10 +58,10 @@ internal fun SignUpScreen(
         ) {
             AppText(
                 text = "Welcome",
-                textStyle = MaterialTheme.typography.titleMedium
+                textStyle = MaterialTheme.typography.titleLarge
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(28.dp))
 
             AppTextField(
                 value = uiState.username,
