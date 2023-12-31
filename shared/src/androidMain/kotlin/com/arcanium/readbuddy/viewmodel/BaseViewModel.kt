@@ -23,6 +23,9 @@ open class BaseViewModel<State, Action>(state: State) : ViewModel() {
     private val _uiState = MutableStateFlow(state)
     val uiState = _uiState.asStateFlow()
 
+    protected val currentUiState: State
+        get() = uiState.value
+
     protected fun emitAction(action: Action) {
         viewModelScope.launch {
             _action.send(element = action)

@@ -33,7 +33,17 @@ internal class SignUpViewModel : BaseViewModel<SignUpScreenState, SignUpScreenAc
         }
 
         override fun onNextClicked() {
-            emitAction(SignUpScreenAction.NavigateToCustomize)
+            if (isInputValid()) {
+                emitAction(SignUpScreenAction.NavigateToCustomize)
+            } else {
+                emitAction(SignUpScreenAction.ShowMessage("Invalid input"))
+            }
         }
+    }
+
+    private fun isInputValid(): Boolean {
+        return currentUiState.username.isNotEmpty() &&
+                currentUiState.authHeaderApiKey.isNotEmpty() &&
+                currentUiState.authHeaderApiHost.isNotEmpty()
     }
 }
