@@ -1,8 +1,17 @@
 package com.arcanium.readbuddy.navigation
 
-sealed class Screen(val route: String) {
-    data object OnboardingGraph : Screen(route = "Onboarding") {
-        data object SignUp : Screen(route = "Login")
-        data object Personalize : Screen(route = "Login")
+interface Screen {
+    val route: String
+}
+
+data object OnboardingGraph : Screen {
+    override val route: String = "Onboarding"
+
+    data object SignUp : Screen {
+        override val route: String = "Onboarding.SignUp"
+    }
+
+    data object Personalize : Screen {
+        override val route: String = "Onboarding.Personalize"
     }
 }
