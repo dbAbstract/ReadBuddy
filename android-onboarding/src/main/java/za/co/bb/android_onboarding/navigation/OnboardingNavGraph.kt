@@ -10,6 +10,7 @@ import com.arcanium.readbuddy.navigation.NavAction
 import com.arcanium.readbuddy.navigation.OnboardingGraph
 import com.arcanium.readbuddy.ui.util.showToast
 import com.arcanium.readbuddy.viewmodel.observeAction
+import za.co.bb.android_onboarding.personalize.view.PersonalizeScreen
 import za.co.bb.android_onboarding.sign_up.presentation.SignUpScreenAction
 import za.co.bb.android_onboarding.sign_up.view.SignUpScreen
 import za.co.bb.android_onboarding.sign_up.viewmodel.signUpViewModel
@@ -41,7 +42,7 @@ fun NavGraphBuilder.onboardingNavGraph(navigate: (NavAction) -> Unit) {
         }
 
         composable(route = OnboardingGraph.Personalize.route) {
-
+            PersonalizeScreen()
         }
     }
 }
