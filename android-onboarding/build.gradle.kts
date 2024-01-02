@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.compose.ui.tooling)
 
     implementation(projects.shared)
+    implementation(projects.booksDomain)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)

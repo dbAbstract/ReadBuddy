@@ -40,8 +40,8 @@ internal class BooksRepositoryImpl(
 
             remoteBookList.forEach { bookEntity ->
                 log.i { "Caching book ${bookEntity.title}" }
-                val genresForBook = bookEntity.genres.map { genreName ->
-                    Genre(genreName)
+                val genresForBook = bookEntity.genres.mapNotNull { genreName ->
+                    Genre.getGenreByString(genreName)
                 }
                 genresForBook.forEach { genre ->
                     booksDao.insertBookGenre(

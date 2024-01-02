@@ -14,7 +14,7 @@ internal class BooksDao(
 
     suspend fun getBooksByGenre(genre: Genre): List<Book> = withContext(Dispatchers.IO) {
         database.bookEntityQueries
-            .getBooksByGenre(genreName = genre.name)
+            .getBooksByGenre(genreName = genre.value )
             .executeAsList()
             .map { it.toBook() }
     }
@@ -22,7 +22,7 @@ internal class BooksDao(
     suspend fun insertBookGenre(bookId: String, genre: Genre) = withContext(Dispatchers.IO) {
         database.bookGenreLinkEntityQueries.insertBookGenreLink(
             bookId = bookId,
-            genreName = genre.name
+            genreName = genre.value
         )
     }
 
