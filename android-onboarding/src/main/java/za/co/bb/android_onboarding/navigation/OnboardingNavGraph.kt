@@ -10,6 +10,7 @@ import com.arcanium.readbuddy.navigation.NavAction
 import com.arcanium.readbuddy.navigation.OnboardingGraph
 import com.arcanium.readbuddy.ui.util.showToast
 import com.arcanium.readbuddy.viewmodel.observeAction
+import za.co.bb.android_onboarding.personalize.presentation.PersonalizeScreenAction
 import za.co.bb.android_onboarding.personalize.view.PersonalizeScreen
 import za.co.bb.android_onboarding.personalize.viewmodel.personalizeViewModel
 import za.co.bb.android_onboarding.sign_up.presentation.SignUpScreenAction
@@ -50,6 +51,12 @@ fun NavGraphBuilder.onboardingNavGraph(navigate: (NavAction) -> Unit) {
                 uiState = uiState,
                 eventHandler = personalizeViewModel.eventHandler
             )
+
+            personalizeViewModel.observeAction { action ->
+                when (action) {
+                    PersonalizeScreenAction.NavigateToHome -> navigate(NavAction.NavigateToHome)
+                }
+            }
         }
     }
 }

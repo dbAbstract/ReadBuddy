@@ -16,8 +16,10 @@ fun NavHostController.navigate(navAction: NavAction) {
     when (navAction) {
         NavAction.Back -> popBackStack()
 
-        NavAction.NavigateToPersonalize -> navigate(route = OnboardingGraph.Personalize.route) {
-            popUpTo(OnboardingGraph.SignUp.route) {
+        NavAction.NavigateToPersonalize -> navigate(route = OnboardingGraph.Personalize.route)
+
+        NavAction.NavigateToHome -> navigate(route = "Home") {
+            popUpTo(OnboardingGraph.Personalize.route) {
                 inclusive = true
             }
         }
