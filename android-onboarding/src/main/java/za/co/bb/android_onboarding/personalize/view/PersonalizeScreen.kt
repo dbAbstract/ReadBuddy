@@ -10,12 +10,17 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.arcanium.books_domain.model.Genre
+import com.arcanium.readbuddy.ui.components.AppButton
 import com.arcanium.readbuddy.ui.components.AppText
+import za.co.bb.android_onboarding.personalize.presentation.PersonalizeScreenEventHandler
+import za.co.bb.android_onboarding.personalize.presentation.PersonalizeScreenState
 import za.co.bb.android_onboarding.personalize.ui.GenreSelectionGrid
 
 @Composable
-fun PersonalizeScreen() {
+internal fun PersonalizeScreen(
+    uiState: PersonalizeScreenState,
+    eventHandler: PersonalizeScreenEventHandler
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -25,15 +30,24 @@ fun PersonalizeScreen() {
     ) {
         AppText(
             modifier = Modifier
-                .padding(vertical = 8.dp),
+                .padding(top = 16.dp, bottom = 8.dp),
             text = "Pick at least 3 Genres",
             textStyle = MaterialTheme.typography.titleSmall,
             maxLines = 3
         )
         
         GenreSelectionGrid(
-            items = Genre.entries.map { it.value },
-            onClick = {}
+            modifier = Modifier.padding(bottom = 100.dp),
+            genres = uiState.genres,
+            onClick = eventHandler::onGenreSelected,
+            selectedGenres = uiState.selectedGenres
         )
+
+        AppButton(
+            onClick = eventHandler::onNextClicked,
+            enabled = uiState.canGoNext
+        ) {
+            AppText(text = "Next")
+        }
     }
 }

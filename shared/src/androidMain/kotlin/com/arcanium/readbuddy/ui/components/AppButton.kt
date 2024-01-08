@@ -10,6 +10,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.unit.dp
 
 @Composable
 fun AppButton(
@@ -19,7 +20,11 @@ fun AppButton(
     buttonColors: ButtonColors = ButtonDefaults.buttonColors(
         containerColor = MaterialTheme.colorScheme.primaryContainer
     ),
-    border: BorderStroke? = null,
+    border: BorderStroke? = BorderStroke(
+        width = 1.dp,
+        color = MaterialTheme.colorScheme.primary
+    ),
+    enabled: Boolean = true,
     content: @Composable RowScope.() -> Unit
 ) {
     Button(
@@ -28,6 +33,7 @@ fun AppButton(
         shape = shape,
         colors = buttonColors,
         border = border,
-        content = content
+        content = content,
+        enabled = enabled
     )
 }
