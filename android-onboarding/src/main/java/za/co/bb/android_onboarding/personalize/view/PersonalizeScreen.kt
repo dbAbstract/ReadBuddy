@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeContentPadding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -30,7 +31,7 @@ internal fun PersonalizeScreen(
     ) {
         AppText(
             modifier = Modifier
-                .padding(top = 16.dp, bottom = 8.dp),
+                .padding(top = 36.dp, bottom = 16.dp),
             text = "Pick at least 3 Genres",
             textStyle = MaterialTheme.typography.titleSmall,
             maxLines = 3
@@ -44,6 +45,7 @@ internal fun PersonalizeScreen(
         )
 
         AppButton(
+            modifier = Modifier.width(180.dp),
             onClick = eventHandler::onNextClicked,
             enabled = uiState.canGoNext
         ) {
