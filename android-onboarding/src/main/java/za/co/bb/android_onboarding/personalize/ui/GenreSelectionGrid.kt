@@ -71,7 +71,7 @@ private fun GenreSelectionComponent(
         shape = CircleShape,
         border = BorderStroke(
             width = 1.dp,
-            color = MaterialTheme.colorScheme.onPrimaryContainer
+            color = MaterialTheme.colorScheme.primary
         ),
         onClick = onClick,
         colors = CardDefaults.cardColors(
@@ -89,7 +89,11 @@ private fun GenreSelectionComponent(
         ) {
             AppText(
                 text = genre.value,
-                textStyle = MaterialTheme.typography.bodySmall
+                textStyle = MaterialTheme.typography.bodySmall,
+                color = if (isSelected)
+                    MaterialTheme.colorScheme.onPrimaryContainer
+                else
+                    MaterialTheme.colorScheme.onBackground
             )
         }
         Spacer(modifier = Modifier.weight(1f))

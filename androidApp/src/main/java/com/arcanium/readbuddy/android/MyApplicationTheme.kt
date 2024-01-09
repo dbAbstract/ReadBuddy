@@ -30,11 +30,13 @@ fun MyApplicationTheme(
     } else {
         lightColorScheme(
             primary = Color(0xFF242424),
-            secondary = Color(0xFF03DAC5),
-            tertiary = Color(0xFF3700B3),
+            secondary = Color(0xFFF5F5F5),
+            tertiary = Color(0xFF30475E),
             onPrimary = Color.White,
-            primaryContainer = Color(0xFFFFFFF4),
-            onPrimaryContainer = Color.Black
+            primaryContainer = Color(0xFFF05454),
+            onPrimaryContainer = Color.White,
+            background = Color.White,
+            onBackground = Color(0xFF242424)
         )
     }
     val typography = Typography(

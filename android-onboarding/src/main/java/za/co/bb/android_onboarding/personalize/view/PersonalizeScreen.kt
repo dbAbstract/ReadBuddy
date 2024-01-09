@@ -49,7 +49,7 @@ internal fun PersonalizeScreen(
             onClick = eventHandler::onNextClicked,
             enabled = uiState.canGoNext
         ) {
-            AppText(text = "Next")
+            AppText(text = "Next", color = MaterialTheme.colorScheme.onPrimaryContainer)
         }
     }
 }

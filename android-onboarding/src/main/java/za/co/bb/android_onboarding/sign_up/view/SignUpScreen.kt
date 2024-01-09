@@ -69,7 +69,8 @@ internal fun SignUpScreen(
                 label = {
                     AppText(
                         text = "Username",
-                        textStyle = MaterialTheme.typography.labelMedium
+                        textStyle = MaterialTheme.typography.labelMedium,
+                        color = MaterialTheme.colorScheme.onBackground
                     )
                 }
             )
@@ -82,7 +83,8 @@ internal fun SignUpScreen(
                 label = {
                     AppText(
                         text = "Api Key",
-                        textStyle = MaterialTheme.typography.labelMedium
+                        textStyle = MaterialTheme.typography.labelMedium,
+                        color = MaterialTheme.colorScheme.onBackground
                     )
                 }
             )
@@ -95,7 +97,8 @@ internal fun SignUpScreen(
                 label = {
                     AppText(
                         text = "Api Host",
-                        textStyle = MaterialTheme.typography.labelMedium
+                        textStyle = MaterialTheme.typography.labelMedium,
+                        color = MaterialTheme.colorScheme.onBackground
                     )
                 },
                 modifier = Modifier.imePadding()
@@ -111,7 +114,11 @@ internal fun SignUpScreen(
                 onClick = eventHandler::onNextClicked,
                 border = BorderStroke(width = 1.dp, color = MaterialTheme.colorScheme.primary)
             ) {
-                AppText(text = "Next", textStyle = TextStyle(fontSize = 16.sp))
+                AppText(
+                    text = "Next",
+                    textStyle = TextStyle(fontSize = 16.sp),
+                    color = MaterialTheme.colorScheme.onPrimaryContainer
+                )
             }
         }
 
