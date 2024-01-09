@@ -72,7 +72,8 @@ internal fun SignUpScreen(
                         textStyle = MaterialTheme.typography.labelMedium,
                         color = MaterialTheme.colorScheme.onBackground
                     )
-                }
+                },
+                modifier = Modifier.fillMaxWidth(COMPONENT_WIDTH_RATIO)
             )
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -86,7 +87,8 @@ internal fun SignUpScreen(
                         textStyle = MaterialTheme.typography.labelMedium,
                         color = MaterialTheme.colorScheme.onBackground
                     )
-                }
+                },
+                modifier = Modifier.fillMaxWidth(COMPONENT_WIDTH_RATIO)
             )
 
             Spacer(modifier = Modifier.height(16.dp))
@@ -101,7 +103,9 @@ internal fun SignUpScreen(
                         color = MaterialTheme.colorScheme.onBackground
                     )
                 },
-                modifier = Modifier.imePadding()
+                modifier = Modifier
+                    .fillMaxWidth(COMPONENT_WIDTH_RATIO)
+                    .imePadding()
             )
 
             Spacer(modifier = Modifier.height(28.dp))
@@ -109,7 +113,7 @@ internal fun SignUpScreen(
             AppButton(
                 modifier = Modifier
                     .height(60.dp)
-                    .fillMaxWidth(0.7f)
+                    .fillMaxWidth(COMPONENT_WIDTH_RATIO)
                     .imePadding(),
                 onClick = eventHandler::onNextClicked,
                 border = BorderStroke(width = 1.dp, color = MaterialTheme.colorScheme.primary)
@@ -131,6 +135,8 @@ internal fun SignUpScreen(
     }
 
 }
+
+private const val COMPONENT_WIDTH_RATIO = 0.7f
 
 @Preview(
     showBackground = true,
